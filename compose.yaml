@@ -1,0 +1,9 @@
+services:
+
+  build123d:
+    build:
+      context: ./build123d
+    volumes:
+      # /etc/resolv.conf as a temporary fix for https://github.com/containers/aardvark-dns/issues/535
+      - /etc/resolv.conf:/etc/resolv.conf:ro
+      - ./models:/models
