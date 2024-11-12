@@ -4,6 +4,7 @@ RUN \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install \
         --assume-yes --quiet --no-install-recommends \
+        fontconfig=2.14.1-4 \
         inotify-tools=3.22.6.0-4 \
         libgl1=1.6.0-1 && \
     apt-get clean && \
