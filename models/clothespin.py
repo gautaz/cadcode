@@ -3,6 +3,8 @@ from build123d import *
 
 length, centerToBeak, width, thickness = 70, 42, 7, 9
 springThickness, springRadius, springLever = 1.5, 3, 17
+hingeLength, hingeHeight = 5, 10
+hingeHoleLength, hingeHoleHeight = hingeLength*1.5, hingeHeight*1.1
 
 polylinePoints = [
     (0.53*centerToBeak, 0),
@@ -47,13 +49,13 @@ with BuildPart() as clothespin:
         Cylinder(springThickness/2, 2*thickness, mode=Mode.SUBTRACT)
 
     with BuildSketch(Plane.XY.offset(1)):
-        with Locations((springRadius*2+1, 0)):
-            Rectangle(6, 12)
+        with Locations((springRadius+1+hingeHoleLength/2, 0)):
+            Rectangle(hingeHoleLength, hingeHoleHeight)
     extrude(amount=thickness/2-1, mode=Mode.SUBTRACT)
 
     with BuildSketch(Plane.XY.offset(thickness/2)):
-        with Locations((springRadius*2, 0)):
-            Rectangle(4, 10)
+        with Locations((springRadius+1+hingeLength/2, 0)):
+            Rectangle(hingeLength, hingeHeight)
     extrude(amount=thickness/2-1)
 
 
