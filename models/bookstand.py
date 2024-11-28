@@ -4,13 +4,13 @@ from build123d import *
 
 logging.basicConfig(level=logging.INFO)
 
-length, height, thickness = 130, 170, 6
-externalFilletRatio, internalFilletRatio = 0.6, 0.1
+length, height, thickness = 150, 155, 5
+externalFilletRatio, internalFilletRatio = 0.42, 0.1
 
 leftBindingCount = 5
 rightBindingCount = leftBindingCount+1
 bindingCount = leftBindingCount+rightBindingCount
-bindingRadius, bindingCoreRadius = thickness/3, 0.8
+bindingRadius, bindingCoreRadius = 2, 0.8
 
 splineProfile = [
     (0.16, 1),
