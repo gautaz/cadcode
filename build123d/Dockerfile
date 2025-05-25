@@ -1,4 +1,4 @@
-FROM python:3.13.2-slim-bookworm
+FROM python:3.13.3-slim-bookworm
 WORKDIR /opt/build123d
 ADD https://github.com/noirblancrouge/Beon/raw/refs/heads/master/fonts/ttf/Beon-Regular.ttf /usr/share/fonts/truetype/beon/
 RUN \
@@ -13,7 +13,7 @@ RUN \
     python -m venv /opt/build123d && \
     . ./bin/activate && \
     pip install --no-cache-dir --upgrade pip==25.0 && \
-    pip install --no-cache-dir build123d==0.9.0 watchdog[watchmedo]==6.0.0
+    pip install --no-cache-dir build123d==0.9.1 watchdog[watchmedo]==6.0.0
 WORKDIR /models
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
