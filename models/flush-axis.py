@@ -17,4 +17,4 @@ with BuildPart() as axis:
 logging.info("Exporting...")
 exporter3d = Mesher()
 exporter3d.add_shape(axis.part)
-exporter3d.write("flush_axis.3mf")
+exporter3d.write("flush-axis.3mf")
